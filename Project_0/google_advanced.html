@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .grid {
+                background-color: white;
+                display: grid;
+                padding: 2px;
+                grid-column-gap: 20px;
+                grid-row-gap: 10px;
+                grid-template-columns: 300px 400px;
+            }
+
+            .grid-item {
+                background-color: white;
+                font-size: 20px;
+                padding: 2px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <form style="text-align: right;">
+            <a href="index.html">Google</a>
+        </form>
+        <div style="text-align: left">
+            <img style="width: 100px;" src="logo_google_icon.png" alt="Google logo">
+        </div>
+        <h2 style="color:red;">
+            Advanced Search
+        </h2>
+        <hr>
+        <br>
+        <h3>
+            Find pages with...
+        </h3>
+
+        <form style="text-align: left;" action="https://www.google.com/search">
+            <div class="grid">
+                <div class="grid-item">all these words:</div>
+                <div class="grid-item"><input style="border: 2px solid blue; height: 20px; width: 400px; font-size: 20px" type="text" name="as_q"></div>
+                <div class="grid-item">this exact word or phrase:</div>
+                <div class="grid-item"><input style="border: 2px solid blue; height: 20px; width: 400px; font-size: 20px" type="text" name="as_epq"></div>
+                <div class="grid-item">any of these words:</div>
+                <div class="grid-item"><input style="border: 2px solid blue; height: 20px; width: 400px; font-size: 20px" type="text" name="as_oq"></div>
+                <div class="grid-item">none of these words:</div>
+                <div class="grid-item"><input style="border: 2px solid blue; height: 20px; width: 400px; font-size: 20px" type="text" name="as_eq"></div>
+                <div class="grid-item"> </div>
+                <div class="grid-item" style="text-align: right;"><input style="border: 2px solid rgb(45, 48, 130); border-radius: 4px; height: 28px; background-color: rgb(33, 89, 186); color: white;" type="submit" value="Advanced Search"></div>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>
