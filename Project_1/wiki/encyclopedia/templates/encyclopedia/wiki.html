@@ -12,5 +12,7 @@
     {% else %}
         Error: Page Not Found!
     {% endif %}
+    <br>
+    <a href="{% url 'encyclopedia:edit' %}">Edit Page</a>
 
 {% endblock %}

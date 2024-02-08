@@ -39,3 +39,6 @@ def wiki(request, title):
         "entry": util.get_entry(title),
     })
 
+def new(request):
+    return render(request, "encyclopedia/new.html")
+
