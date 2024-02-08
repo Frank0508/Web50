@@ -5,14 +5,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>New Entry:</h1>
+    <h3>New Entry:</h3>
     <form action="{% url 'encyclopedia:new' %}" method="post">
         {% csrf_token %}
         <p>Title</p>
-        <input type="text" name="title">
-        <br>
-        <textarea name="content" rows="10" cols="100">Input Content</textarea>
-        <br>
+        <!--<input type="text" name="title">-->
+        {{ form }}
+        <br><br>
+        <p>Content</p>
+        <textarea name="content">Input Content</textarea>
+        <br><br>
         <input type="submit">
     </form>
 

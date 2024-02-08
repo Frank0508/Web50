@@ -7,6 +7,9 @@ from django.http import HttpResponseRedirect
 class NewTaskForm(forms.Form):
     search = forms.CharField(label="q")
 
+class NewEntryForm(forms.Form):
+    new_entry = forms.CharField(label="New Entry")
+
 def search(request):
 
     if request.method == "POST":
@@ -15,7 +18,11 @@ def search(request):
             search = form.cleaned_data["search"]
             if search in util.list_entries():
                 return HttpResponseRedirect(reverse("wiki"/search))
-
+            else:
+                return render(request, "encyclopedia/search.html", {
+                    "form": NewTaskForm(),
+                    "entries":util.list_entries()
+                })
         else:
             return render(request, "encyclopedia/search.html", {
                 "form": form
@@ -23,7 +30,6 @@ def search(request):
 
     return render(request, "encyclopedia/search.html", {
         "form": NewTaskForm(),
-        "entries": util.list_entries(),
     })
 
 
@@ -40,5 +46,7 @@ def wiki(request, title):
     })
 
 def new(request):
-    return render(request, "encyclopedia/new.html")
+    return render(request, "encyclopedia/new.html", {
+        "form": NewEntryForm()
+    })
 
