@@ -4,12 +4,14 @@
      <title>Colors</title>
      <script>
          document.addEventListener('DOMContentLoaded', function() {
+            console.log(document.querySelectorAll('button'));
             document.querySelectorAll('button').forEach(function(button) {
                 button.onclick = function() {
                     document.querySelector("#hello").style.color = button.dataset.color;
                 }
             });
          });
+
      </script>
 </head>
 <body>
